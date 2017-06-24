@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/"
+    "start": "node server/",
+    "postinstall": "check-node-version --node '>=8.1.0' --npm '>=5.0.0'",
+    "heroku-postbuild": "cd client && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "check-node-version": "^2.1.0",
     "express": "^4.15.3",
     "password-generator": "^2.1.0"
   }
