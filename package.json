@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/",
+    "start-client": "cd client && npm run start",
     "postinstall": "check-node-version --node '>=8.1.2' --npm '>=5.0.3'",
     "heroku-postbuild": "cd client && npm i --production=false && npm run build"
   },

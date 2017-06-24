@@ -3,7 +3,7 @@ import './App.css';
 
 class App extends Component {
   // Initialize state
-  state = { passwords: [] }
+  state = { passwords: [], count: 0 }
 
   // Fetch passwords after first mount
   componentDidMount() {
@@ -14,18 +14,18 @@ class App extends Component {
     // Get the passwords and store them in state
     fetch('/api/password')
       .then(res => res.json())
-      .then(passwords => this.setState({ passwords }));
+      .then(({ passwords, count }) => this.setState({ passwords, count }));
   }
 
   render() {
-    const { passwords } = this.state;
+    const { passwords, count } = this.state;
 
     return (
       <div className="App">
         {/* Render the passwords if we have them */}
         {passwords.length ? (
           <div>
-            <h1>5 Passwords.</h1>
+            <h1>{count} passwords</h1>
             <ul className="passwords">
               {/*
                 Generally it's bad to use "index" as a key.

@@ -10,7 +10,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, '..', clientBuildFolder)))
 
 app.get('/api/password', (req, res) => {
-  const count = req.query.count || 5
+  const count = Number.parseInt(req.query.count, 10) || 5
 
   // Generate some passwords
   const passwords = Array.from(Array(count).keys()).map(i =>
@@ -18,7 +18,7 @@ app.get('/api/password', (req, res) => {
   )
 
   // Return them as json
-  res.json(passwords)
+  res.json({ passwords, count })
 })
 
 // The "catchall" handler: for any request that doesn't
