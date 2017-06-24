@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/",
-    "postinstall": "check-node-version --node '>=8.1.0' --npm '>=5.0.0'",
+    "postinstall": "check-node-version --node '>=8.1.2' --npm '>=5.0.3'",
     "start-client": "cd client && npm run build",
     "heroku-postbuild": "npm run start-client"
   },
@@ -18,7 +18,7 @@
     "password-generator": "^2.1.0"
   },
   "engines": {
-    "node": ">8.1.0",
-    "npm": ">=5.0.0"
+    "node": ">8.1.2",
+    "npm": ">=5.0.3"
   }
 }
