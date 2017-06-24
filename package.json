@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/",
     "postinstall": "check-node-version --node '>=8.1.2' --npm '>=5.0.3'",
-    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+    "heroku-postbuild": "cd client && npm i --production=false && npm run build"
   },
   "keywords": [],
   "author": "",
