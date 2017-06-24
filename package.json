@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/",
     "postinstall": "check-node-version --node '>=8.1.0' --npm '>=5.0.0'",
-    "heroku-postbuild": "cd client && npm run build"
+    "start-client": "cd client && npm run build",
+    "heroku-postbuild": "npm run start-client"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,9 @@
     "check-node-version": "^2.1.0",
     "express": "^4.15.3",
     "password-generator": "^2.1.0"
+  },
+  "engines": {
+    "node": ">8.1.0",
+    "npm": ">=5.0.0"
   }
 }
